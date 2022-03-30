@@ -1,0 +1,66 @@
+{
+  "proofs": [
+    {
+      "identifier": "gateway:authenticity:mac",
+      "provider": "iotsear:crypto:sign:sha256withhmac",
+      "secret-key": "a6yYS3GduRl/6CVH449qKZSJpIFE/pX0ziF7bCkPs5w="
+    },
+    {
+      "identifier": "gateway:authenticity:rsa",
+      "provider": "iotsear:crypto:sign:sha256withrsa",
+      "private-key": "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDRDM5QNucwfW7yp6siEtP/9fZGfU0vV9NKdqL8L+zKpnEwUWaD0+2cvHPo5+ZnZVT95xNop6Pi5u00D25rQXv80MO4fc9n9PvQUKYjXdrSy4MPBXkGpilyalZ/inPJyUJFJDFi50u4KyOEqJEQjNEORJHmHQZOWKyQjVQTGCsJZzYa+dCuauFn4BwWHek0Xit7bs1Q/pjNv2JFBbeCIBaTt+mVS+AM2AgFStqnmdLIuTdtP1aeTnVwj4yCpj0qtTIUNJnp/2xHeEZEhgfnXXeLICB67DP1wJxWlEPoJuAgc12HacXBrV4RgnlTT/jit+ETXJm0R9VUV8oHWW+P/qzVAgMBAAECggEADk1zKMog1iX20HOdQfG01HcmYts8ISg/71Z06ePOLm07Iu78IGUrBXAKpB2IRicI122XBoWAW8v94Ekf/lxBbeIgnz+S+vioE9q4tdm8Lh44uMSLQQ5e7pI3mcvwsRZryiGNnsfWsTfZBcCnWtEE6pYmv0OEGhnMsKp4B+29iraHyEfha88+cCg/pO/1i3QHRFtXMVSHXils3j6Pk6dZCIm8IuaCcN2mI+NqYfgyUAGmMJvLsOrxcO82/BDtP3jRrA6MfyUy1ELxAGMe2SBdIN7vDu0WTXDCF1evUaksKKGlbN7AV+kR4ZvEc18MWlSrijKa8MY7920d9jvTxtNvMQKBgQDWOH+POZAl2DsiuPskE2PY1JHfDWTWGtlSQi+DaJCq3RVd910TtjXnOrnzngjRI7ABYU3bApLcDwnNQjCa4bXadyUT/ip8USBmEAo11B6NZn8JGUwgr5FGrHoIQv3VQodNiSG4VhcpvALWqluRXRqRVr66pNe3zQlTaexPH5juTQKBgQD50iYdu7oqWSDGVIcasG6NvbuHJH2j1CEzYXIPsx5uOPmJhAhH2+BGSlbXaOFegYkDrM51JP+HsFTyIpNrR+Y44B+8GhOIakHXbo0C8WyroXsUjb27ahfz7F0DpQ5e7hJjaozWqGp0KhbRItdIfR2eXN8LtvX3zwzDmH/raLTMqQKBgQC3Dbxi5St6S1XtC+j/INqXdL3ZvpZGJtdB5XC4d+f3OciCbVhJ+dAB8TrpJEggfsBtzXo8Bez8wpT7ou3py6ocLueuN+iSJrjqvhYbfVFGPyma2tUksSIRJF17JdPGIn2AEgiQfnB4p0I9sYFhrA+B1oBQ+X+kfj7T2pWl3zhNmQKBgAUHJLs+dv25M36qXtm7qU3y/p42rsyoTU7CbFBCk582SFdrL9t6YmYnwt2s/7QuOTq4tKMI7pelheAlr//dv5VvdVQM1k3NjauvTuk7QKunoVmFjMcD2J2RKUIUhViFxBr6HwGG/DWAT1tAL0MHOZxhVB/hO8wT/7bED/cF8XWZAoGABuAQarnE/gYm77CHRcA9kJ08fEa86p7ATY4A9ERk0EFYvf2iwjUxbC7QFr8/1iv48x5HU99DkeDryNoKUs2FBkxklPCnOTzXzcAcglc82uPo4Gy6wtLJI7zbYE5sH8IfWYl/6RsHYR8lcCMnXoNS3/+uRJjR/mZ8Z6+1u6xeZII=",
+      "public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0QzOUDbnMH1u8qerIhLT//X2Rn1NL1fTSnai/C/syqZxMFFmg9PtnLxz6OfmZ2VU/ecTaKej4ubtNA9ua0F7/NDDuH3PZ/T70FCmI13a0suDDwV5BqYpcmpWf4pzyclCRSQxYudLuCsjhKiREIzRDkSR5h0GTliskI1UExgrCWc2GvnQrmrhZ+AcFh3pNF4re27NUP6Yzb9iRQW3giAWk7fplUvgDNgIBUrap5nSyLk3bT9Wnk51cI+MgqY9KrUyFDSZ6f9sR3hGRIYH5113iyAgeuwz9cCcVpRD6CbgIHNdh2nFwa1eEYJ5U0/44rfhE1yZtEfVVFfKB1lvj/6s1QIDAQAB"
+    }
+  ],
+  "sources": [
+    {
+      "provider": "sources:mock",
+      "identifier": "BT Beacon#02.124",
+      "contextHandler": {
+        "provider": "handson:context:handler:mock",
+        "decoder": "iotsear:context:encoders:string-encoder-decoder",
+        "repeat": true,
+        "time": 10000,
+        "outputType": "String",
+        "contextType": "BTSensor",
+        "value": [
+          "DD:47:FA:E5:E0:00",
+          "53:BE:6E:21:03:C0",
+          "1C:B7:37:2B:99:76",
+          "B4:67:7B:EA:76:7C",
+          "DD:47:FA:E5:E0:00",
+          "6A:6A:48:75:73:00",
+          "73:BE:42:06:39:BA",
+          "5A:E8:98:05:14:28",
+          "8C:85:90:86:EA:B8",
+          "70:03:76:8D:52:84"
+        ]
+      },
+      "metadata": {
+        "authenticity": "gateway:authenticity:rsa",
+        "attach-proof": "iotsear:context:proof:generic-authenticity-proof",
+        "contextType": "BTSensor",
+        "topic": "handson/presence"
+      }
+    },
+    {
+      "provider": "sources:mock",
+      "identifier": "status#02.124",
+      "contextHandler": {
+        "provider": "handson:context:handler:mock",
+        "decoder": "iotsear:context:encoders:string-encoder-decoder",
+        "repeat": true,
+        "time": 10000,
+        "outputType": "String",
+        "contextType": "status",
+        "value": "in-use"
+      },
+      "metadata": {
+        "authenticity": "gateway:authenticity:rsa",
+        "attach-proof": "iotsear:context:proof:generic-authenticity-proof",
+        "topic": "handson/roomstatus",
+        "contextType": "Status"
+      }
+    }
+  ]
+}

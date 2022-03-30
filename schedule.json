@@ -1,0 +1,24 @@
+{
+  "21-02-2022": {
+    "09:00-11:30" : "Comparative programming languages"
+  },
+  "22-02-2022": {
+    "09:00-11:30" : "Internet Infrastructure",
+    "13:30-16:00" : "Computer Networks",
+    "10:00-24:00" : "IoTSEAR hands-on seminar"
+  },
+  "23-02-2022": {
+    "09:00-11:30" : "Comparative programming languages",
+    "13:30-16:00" : "Computer Networks"
+
+  },
+  "24-02-2022": {
+    "10:00-12:00" : "IoTSEAR hands-on seminar",
+    "13:00-15:00" : "SMIoT hands-on seminar"
+  },
+  "25-02-2022": {
+    "08:00-10:00" : "Software Tools",
+    "10:00:12:30" : "Internet Infrastructure"
+
+  }
+}

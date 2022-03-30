@@ -1,0 +1,35 @@
+{
+  "identifier": "file-access",
+  "priority": 1,
+  "target": {
+    "subject": "AnySubject",
+    "resource": "files:documentation.pdf",
+    "action": "read"
+  },
+  "effect": "allow",
+  "condition": {
+    "darc:condition:and": [
+      {
+        "source": "BT",
+        "operation": "handson:operation:seen-by-beacon",
+        "value": "BT Beacon#02.124",
+        "verifiers": [
+          "darc:condition:verifier:freshness:30s"
+        ]
+      },
+      {
+        "source": "status#02.124",
+        "operation": "darc:condition:operation:equals",
+        "value": "in-use",
+        "verifiers": [
+          "darc:condition:verifier:freshness:30s"
+        ]
+      },
+      {
+        "source": "calendar#02.124",
+        "operation": "handson:operation:is-scheduled",
+        "value": "IoTSEAR hands-on seminar"
+      }
+    ]
+  }
+}

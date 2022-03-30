@@ -1,0 +1,67 @@
+{
+  "pbms": {
+    "repository": {
+      "provider": "iotsear:pbms:directory-based-policy-repository",
+      "path": "./policies/",
+      "cache": false,
+      "parser": "iotsear:pbms:darcJsonParser"
+    },
+    "pdp": {
+      "provider": "iotsear:pbms:localPDP"
+    },
+    "context-persistence": {
+      "provider": "iotsear:contextStore:memory"
+    }
+  },
+  "proofs": [
+    {
+      "provider": "iotsear:crypto:sign:sha256withhmac",
+      "identifier": "gateway:authenticity",
+      "secret-key": "a6yYS3GduRl/6CVH449qKZSJpIFE/pX0ziF7bCkPs5w="
+    },
+    {
+      "provider": "iotsear:crypto:sign:sha256withrsa",
+      "identifier": "gateway:authenticity2",
+      "public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0QzOUDbnMH1u8qerIhLT//X2Rn1NL1fTSnai/C/syqZxMFFmg9PtnLxz6OfmZ2VU/ecTaKej4ubtNA9ua0F7/NDDuH3PZ/T70FCmI13a0suDDwV5BqYpcmpWf4pzyclCRSQxYudLuCsjhKiREIzRDkSR5h0GTliskI1UExgrCWc2GvnQrmrhZ+AcFh3pNF4re27NUP6Yzb9iRQW3giAWk7fplUvgDNgIBUrap5nSyLk3bT9Wnk51cI+MgqY9KrUyFDSZ6f9sR3hGRIYH5113iyAgeuwz9cCcVpRD6CbgIHNdh2nFwa1eEYJ5U0/44rfhE1yZtEfVVFfKB1lvj/6s1QIDAQAB"
+    }
+  ],
+  "sources": [
+    {
+      "provider": "handson:server",
+      "identifier": "iotsear-server",
+      "contextHandler": {
+        "provider": "iotsear:context:handler:mock"
+      }
+    },
+    {
+      "provider": "sources:mock",
+      "identifier": "BT Beacon#02.124",
+      "contextHandler": {
+        "provider": "iotsear:context:handler:mqttReceiver",
+        "decoder": "iotsear:context:encoders:string-encoder-decoder",
+        "broker": "tcp://localhost:1883",
+        "topic": "handson/presence"
+      },
+      "metadata": {
+        "authenticity": "gateway:authenticity2",
+        "topic": "handson/presence",
+        "contextType": "BTSensor"
+      }
+    },
+    {
+      "provider": "sources:mock",
+      "identifier": "status#02.124",
+      "contextHandler": {
+        "provider": "iotsear:context:handler:mqttReceiver",
+        "decoder": "iotsear:context:encoders:string-encoder-decoder",
+        "broker": "tcp://localhost:1883",
+        "topic": "handson/roomstatus"
+      },
+      "metadata": {
+        "authenticity": "gateway:authenticity2",
+        "topic": "handson/roomstatus",
+        "contextType": "Status"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "provider": "sources:mock",
+      "identifier": "phone-nfc",
+      "contextHandler": {
+        "provider": "handson:context:handler:nfc",
+        "secret-key": "8IBaV6IsiDpC3r2pATjSlsy+O2MCI9zbJV+NDWh7j4Q="
+      },
+      "metadata": {
+        "contextType": "NFC"
+      }
+    },
+    {
+      "provider": "sources:mock",
+      "identifier": "phone-bt",
+      "contextHandler": {
+        "provider": "handson:context:handler:bt"
+      },
+      "metadata": {
+        "contextType": "BT"
+      }
+    }
+  ]
+}

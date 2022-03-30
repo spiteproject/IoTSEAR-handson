@@ -1,0 +1,18 @@
+{
+  "identifier": "door-policy",
+  "priority": 1,
+  "target": {
+    "subject": "AnySubject",
+    "resource": "02.124:lock",
+    "action": "open"
+  },
+  "effect": "allow",
+  "condition": {
+    "source": "NFC",
+    "operation": "handson:operation:nfc-verification",
+    "verifiers": [
+      "darc:condition:verifier:freshness:30s",
+      "handson:verifier:subject-ownership"
+    ]
+  }
+}

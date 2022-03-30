@@ -1,0 +1,37 @@
+{
+  "identifier": "file-access-hardened",
+  "priority": 1,
+  "target": {
+    "subject": "AnySubject",
+    "resource": "files:documentation.pdf",
+    "action": "read-hardened"
+  },
+  "effect": "allow",
+  "condition": {
+    "darc:condition:and": [
+      {
+        "source": "BT",
+        "operation": "handson:operation:seen-by-beacon",
+        "value": "BT Beacon#02.124",
+        "verifiers": [
+          "darc:condition:verifier:freshness:5m",
+          "hands-on:verifier:subject-ownership"
+        ]
+      },
+      {
+        "source": "status#02.124",
+        "operation": "darc:condition:operation:equals",
+        "value": "in-use",
+        "verifiers": [
+          "darc:condition:verifier:freshness:5m",
+          "darc:condition:verifier:authenticity"
+        ]
+      },
+      {
+        "source": "calendar#02.124",
+        "operation": "handson:operation:is-scheduled",
+        "value": "IoTSEAR hands-on seminar"
+      }
+    ]
+  }
+}
